@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+	
+	
+ 		<action name="register" class="action.RegisterAction">   
+<result name="success">login.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>  
+ 	<action name="login" class="action.LoginAction">   
+<result name="success">home.jsp</result> 
+<result name="input">login.jsp</result>  
+ <result name="error">error.jsp</result>   
+ </action>  
+ 	<action name="logout" class="action.LoginAction" method="logout">   
+<result name="success">login.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action> 
+ 
+ <action name="showcompanies" class="action.CompanyAction">   
+<result name="success">home.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>  
+ 
+ <action name="showcompanies1" class="action.CompanyAction">   
+<result name="success">user.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>
+   
+  <action name="approve" class="action.CompanyAction" method="approve">   
+<result name="success">home.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>
+ <action name="delete" class="action.CompanyAction" method="delete">   
+<result name="success">home.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>
+   <action name="addcompany" class="action.AddCompanyAction">   
+<result name="success">user.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>
+ 
+ 	<action name="registeradmin" class="action.RegisterAction" method="addnewadmin">   
+<result name="success">login.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>
+ 
+  <action name="addcompanybyadmin" class="action.AddCompanyByAdminAction">   
+<result name="success">user.jsp</result>   
+ <result name="error">error.jsp</result>   
+ </action>
+ 
+<!-- <action name="login" class="action.LoginAction"> -->
+<!-- 		<result name="success" type="redirectAction">home</result> -->
+<!-- 		<result name="input">/login.jsp</result> -->
+<!-- 		<result name="error">/admin.jsp</result> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="home" class="action.MedicineAction"> -->
+<!-- 		<result name="success">/home.jsp</result> -->
+<!-- 		<result name="input">/index.jsp</result> -->
+<!-- 		</action> -->
+	</package>
+</struts>
